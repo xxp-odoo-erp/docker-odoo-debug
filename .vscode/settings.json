@@ -55,4 +55,31 @@
 
     // Python type checking
     "python.analysis.typeCheckingMode": "basic",
+
+    "pylint.args": ["--rcfile=../.pylintrc", "--exit-zero"],
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit",
+        }
+    },
+    "[xml]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "xml.symbols.enabled": false,
+    "actionButtons": {
+        "defaultColor": "#ff0034",
+        "loadNpmCommands": false,
+        "commands": [
+            {
+                "name": "RUN TEST",
+                "color": "green",
+                "singleInstance": true,
+                "command": "docker-compose -f ${env:HOME}/odoo/docker-odoo-debug/18.0/test/docker-compose.yml up -d",
+            },
+        ]
+    }
 }
